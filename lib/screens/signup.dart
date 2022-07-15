@@ -41,7 +41,7 @@ class _signupState extends State<signup> {
                     const EdgeInsets.only(left: 8.0, right: 8.0, top: 15.0),
                 child: TextFormField(
                   validator: (value) {
-                    if (value != null) {
+                    if (value != null && value != "") {
                       if (value.length < 6) {
                         return "Username length should be atleast 6";
                       } else {
@@ -64,7 +64,7 @@ class _signupState extends State<signup> {
                     const EdgeInsets.only(left: 8.0, right: 8.0, top: 10.0),
                 child: TextFormField(
                   validator: (value) {
-                    if (value != null) {
+                    if (value != null && value != "") {
                       if (!regExp.hasMatch(value)) {
                         return "Email is invalid";
                       } else {
@@ -89,7 +89,7 @@ class _signupState extends State<signup> {
                   obscureText: true,
                   validator: (value) {
                     if (value != null) {
-                      if (value.length < 6) {
+                      if (value.length < 6 && value != "") {
                         return "Password length should be atleast 6";
                       } else {
                         return null;
@@ -142,6 +142,7 @@ class _signupState extends State<signup> {
                           ]),
                       width: double.infinity,
                       child: RaisedButton(
+                        color: Color.fromARGB(255, 139, 172, 202),
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
