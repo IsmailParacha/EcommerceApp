@@ -112,17 +112,6 @@ class _signupState extends State<signup> {
                 padding:
                     const EdgeInsets.only(left: 8.0, right: 8.0, top: 10.0),
                 child: TextFormField(
-                  // validator: (value) {
-                  //   if (value != null) {
-                  //     if (value.length > 10) {
-                  //       return "Phone Number length should be 11";
-                  //     } else {
-                  //       return null;
-                  //     }
-                  //   } else {
-                  //     return "Phone number cannot be empty";
-                  //   }
-                  // },
                   decoration: InputDecoration(
                       hintText: "Phone Number",
                       enabledBorder: OutlineInputBorder(
