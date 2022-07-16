@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prc_store/screens/signup.dart';
+import 'package:prc_store/auth/signup.dart';
+import 'package:prc_store/auth/signin.dart';
+import 'package:prc_store/screens/home.dart';
 
 void main() {
   runApp(const mainclass());
@@ -13,7 +15,8 @@ class mainclass extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Ecommerece App",
-      home: signup(),
+      home: signin(),
+      routes: {"/home": (context) => home()},
     );
   }
 }
