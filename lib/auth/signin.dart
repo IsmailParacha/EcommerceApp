@@ -15,6 +15,31 @@ class signin extends StatefulWidget {
 }
 
 class _signinState extends State<signin> {
+//  _googleSignUp() async {
+//     try {
+//       final GoogleSignIn _googleSignIn = GoogleSignIn(
+//         scopes: ['email'],
+//       );
+//       final FirebaseAuth _auth = FirebaseAuth.instance;
+
+//       final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+//       final GoogleSignInAuthentication googleAuth =
+//           await googleUser.authentication;
+
+//       final AuthCredential credential = GoogleAuthProvider.credential(
+//         accessToken: googleAuth.accessToken,
+//         idToken: googleAuth.idToken,
+//       );
+
+//       final User user = (await _auth.signInWithCredential(credential)).user;
+//       // print("signed in " + user.displayName);
+
+//       return user;
+//     } catch (e) {
+//       print(e.message);
+//     }
+//   }
+
   _googleSignUp() async {
     try {
       final GoogleSignIn _googleSignIn = GoogleSignIn(
@@ -45,9 +70,9 @@ class _signinState extends State<signin> {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-            // image: DecorationImage(
-            //     image: AssetImage('assets/background.JPG'), fit: BoxFit.fill),
-            ),
+          image: DecorationImage(
+              image: AssetImage('assets/background.png'), fit: BoxFit.fill),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -90,15 +115,17 @@ class _signinState extends State<signin> {
                           Buttons.Google,
                           text: "Sign up with Google",
                           onPressed: () {
-                            _googleSignUp().then((value) =>
-                                Navigator.pushNamed(context, '/home'));
+                            // _googleSignUp().then((value) =>
+                            //     Navigator.pushNamed(context, '/home'));
                           },
                         ),
                       ),
                       SignInButton(
                         Buttons.Email,
                         text: "Sign up with Email",
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/loginemail');
+                        },
                       ),
                     ],
                   ),

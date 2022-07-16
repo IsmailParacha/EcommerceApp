@@ -166,12 +166,17 @@ class _signupState extends State<signup> {
                     Text("I have Already an Account"),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 7, 189, 255),
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold),
+                      child: InkWell(
+                        onTap: (() {
+                          Navigator.pushNamed(context, '/signin');
+                        }),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 7, 189, 255),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     )
                   ],
